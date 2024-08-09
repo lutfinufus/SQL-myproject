@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Portfolio Details</title>
+    <!--<meta content="" name="description" />
+    <meta content="" name="keywords" />-->
+
+    <!-- Favicons -->
+    <!--
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />-->
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <main id="main">
+      <!-- ======= Breadcrumbs Section ======= -->
+      <section class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Portfolio Details</h2>            
+              <a href="index.html">Home</a>
+          </div>
+        </div>
+      </section>
+      <!-- Breadcrumbs Section -->
+
+      <!-- ======= Portfolio Details Section ======= -->
+      <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                  <div class="swiper-slide">
+                    <img src="img/1/sentimen-negatif.png" alt="" width=480 height=480/>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img src="img/1/sentimen-negatif2.png" alt="" width=480 height=480/>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/1/sentimen-positif.png" alt="" width=480 height=480/>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/1/sentimen-positif2.png" alt="" width=480 height=480/>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <!-----------------------=========SLIDER==================================-->
+            <div class="col-lg-4">
+              <div class="portfolio-info">
+                <h3>Project information</h3>
+                <ul>
+                  <li><strong>Category</strong>: Machine Learning</li>
+                  <li>
+                    <strong>Domain</strong>: Natural Language Processing (NLP)
+                    <!--</li>
+                  <li><strong>Project date</strong>: 01 March, 2020</li>-->
+                  </li>
+
+                  <li>
+                    <strong>Desc</strong>: Mini project by Orbit Future Academy
+                    2022
+                    <!--<a href="#">www.example.com</a>-->
+                  </li>
+                </ul>
+              </div>
+              </div>
+              <div class="portfolio-description">
+                <h3>Analisis Sentimen Ulasan Pengguna Dana</h3>
+                <p>
+                  &nbsp;Dana is a digital wallet platform designed to facilitate
+                  transactions, simply by topping up the balance. Dana's reputation can be assessed
+                  through user reviews, in the form of feedback, criticism, and
+                  appreciation. Although the number of star ratings can indicate reviews, the content does not always match with the high star ratings. 
+                  Sentiment analysis of review content provides deeper insights into user evaluations of Dana and can be used for informed decision-making.
+                </p>
+                <h4><ol>
+                  <li>Data Acquisition</li></ol></h4>
+                <p>&nbsp;Tahapan pertama yaitu melakukan data acquisition 
+                  dengan menggunakan teknik scraping pada Google Play Store 
+                  <b>(API Google-Play-Scraper)</b> dengan bahasa pemprograman <b>Python</b>, bertujuan untuk 
+                  pengambilan data secara otomatis dari ulasan terbaru pengguna Dana. Dengan cara terlebih dahulu install package yang dibutuhkan, 
+                  setelah itu akan dilakukan tahap scraping data dengan menggunakan 600 dataset pada yang terbaru (pada April 2022) yang dapat disimpan kedalam file CSV dan Excel.
+                  
+                  <img class="center" src="img/1/Library.jpg" alt="Library Packages" width=380 height=380/>
+                  
+                  <br><img class="center" src="img/1/Scraping data.JPG" alt="Scraping data" width=320 height=150/>                             
+                </p>                           
+                <p>&nbsp;Tahapan selanjutnya yaitu melakukan data exploration untuk memahami data 
+                  hasil dari scraping Google Playstore. Data yang akan digunakan hanya kolom "content" dan "score", dengan cara membuat dataframe baru. 
+                  Kemudian menentukan sentimen positif dan negatif berdasarkan kolom tersebut.
+                  Jika nilai score <= 3 maka merupakan sentimen negatif (0), sedangkan untuk nilai score >3 maka merupakan sentimen positif (1). 
+                  <img class="center" src="img/1/data-exploration.jpg" alt="Data Exploration" width=380 height=240/>
+                </p>
+                <p>&nbsp;Setelah menentukan parameter sentimen positif dan sentimen negatif, didapatkan hasil yang tidak seimbang antara kedua sentimen tersebut dengan cara menggunakan syntax ".value_counts()". 
+                  Yaitu untuk sentimen negatif (0) sebesar 485 dan sentimen positif (1) sebesar 115. Maka harus melakukan resampling data agar menghasilkan data yang seimbang,
+                  yaitu menjadi 100 untuk sentimen negatif dan sentimen positif. Kemudian dilakukan reset index untuk data yang dihasilkan dimulai dari 0 untuk dataframe. 
+                  <img class="center" src="img/1/resampling-data.jpg" alt="Data Exploration" width=380 height=100/></p>
+                <p>&nbsp;Pada grafik dibawah ini menunjukan komposisi yang dihasilkan tiap score (rating) dari 1 sampai 5
+                  yang diberikan oleh pengguna Dana. <br><img class="center" src="img/1/komposisi-score.png" alt="komposisi-score" width=380 height=250/>
+                  <img class="center" src="img/1/jumlah-score.jpg" alt="jumlah-score" width=350 height=150/>
+                </p>
+                
+                <p>&nbsp;Tahap selanjutnya yaitu melakukan prepocessing data yang bertujuan untuk menyeleksi data text agar terstruktur tergantung dengan kondisi data text. 
+                  Pada proses ini menggunakan tahapan case folding, data cleaning, stopword removal, koreksi penulisan yang tidak baku, dan stemming.
+                  Adapun yang digunakan untuk Case Folding dan data cleaning dibawah ini yaitu:
+                  <ul >
+                    <li>Convert all characters to lowercase</li>
+                    <li>Replace non-lowercase letter (a-z), punctuation, and number with a space </li>
+                    <li>Replace every tab with a space</li>
+                    <li>Replace every newline with a space</li>
+                    <li>Replace one or more whitespace with a single space</li>
+                    <li>Remove whitespace from the beginning and the end</li>
+                  </ul>
+                  <img class="center" src="img/1/case-folding.jpg" alt="Case Folding" width=350 height=170/></p>
+                  <p>
+                  Untuk Stopword Removal yaitu kata-kata yang sering muncul yang tidak memiliki 
+                  arti. Contoh stopwords dalam bahasa Indonesia (Sastrawi) dengan menggunakan modul "stopWordRemoverFactory" seperti:  
+                  'yang', 'untuk', 'pada', 'ke', 'para', 'namun', 'menurut', 'antara', dll. Pada proses ini dengan menggabungkan stopword dari perpustakaan Sastrawi, NLTK Indonesia,
+                  serta stopword dokumen/corpus yang dibuat sendiri dengan menambah kata sesuai kebutuhan.
+
+                              
+                  <img class="center" src="img/1/stopword-list.jpg" alt="Stopword-list" width=380 height=230/>
+                  
+                 
+                  <br><img class="center" src="img/1/stopword-removal.jpg" alt="Stopword" width=380 height=280/>
+                </p>
+                <p>
+                  Dikarenakan terdapat kalimat singkatan, kesalahan penulisan, dan kalimat tidak baku yang dilakukan oleh pengguna Dana. 
+                  Maka, akan dilakukan koreksi penulisan secara manual melalui file ".txt".
+                  <img class="center" src="img/1/koreksi.jpg" alt="Koreksi" width=350 height=200/>
+                </p>
+                <p>Tahapan selanjutnya yaitu stemming yang bertujuan untuk mengurangi variasi kata yang berbeda dengan cara menghilangkan imbuhan ke bentuk dasarnya.
+                  Setelah proses selesai, akan disimpan kedalam file ".csv".
+                <img class="center" src="img/1/stemming.jpg" alt="Stemming" width=350 height=180/>
+                </p>
+                <p>
+                  Setelah data diolah menjadi data yang lebih terstruktur, tahap selanjutnya yaitu melakukan modelling dan evaluation.
+                  Dengan menggunakan model SVM (Support Vector Machine) untuk mengklasifikasikan kelas sentimen positif dan negatif.
+                  Isi konten terlebih dahulu diubah  menjadi  representasi  vektor  menggunakan  TF-IDF,  
+                  yang kemudian model SVM dapat dilatih pada data yang sudah dilabeli sentimen. Sehingga SVM dapat
+                  menentukan keputusan berdasarkan kelas sentimen dari komentar yang belum diketahui secara akurat.
+                  <img class="center" src="img/1/modelling.jpg" alt="Modelling" width=380 height=180/>
+                  Nilai akurasi yang didapatkan yaitu 61%, artinya nilai rendah disebabkan karena word normalizer atau pada koreksi kata tambahan tidak maksimal, sehingga penggunaan kata tidak baku dan kesalahan penulisan kata maupun singkatan pada kebiasaan pengguna Dana tidak ditangani dengan baik
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Portfolio Details Section -->
+    </main>
+    <!-- End #main -->
+    <!-- ======= Header ======= 
+    <header
+      id="header"
+      class="fixed-top d-flex justify-content-center align-items-center"
+    >
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#resume">Resume</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li>
+            <a class="nav-link scrollto active" href="#portfolio">Portfolio</a>
+          </li>
+
+          
+        <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Drop Down 1</a></li>
+            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <ul>
+                <li><a href="#">Deep Drop Down 1</a></li>
+                <li><a href="#">Deep Drop Down 2</a></li>
+                <li><a href="#">Deep Drop Down 3</a></li>
+                <li><a href="#">Deep Drop Down 4</a></li>
+                <li><a href="#">Deep Drop Down 5</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Drop Down 2</a></li>
+            <li><a href="#">Drop Down 3</a></li>
+            <li><a href="#">Drop Down 4</a></li>
+          </ul>
+        </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      
+    </header>
+    End Header -->
+
+    <!--<main id="main">
+       ======= Breadcrumbs Section ======= 
+      <section class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Portfolio Details</h2>
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li>Portfolio Details</li>
+            </ol>
+          </div>
+        </div>
+      </section></main>
+       Breadcrumbs Section -->
+
+    <!-- ======= Portfolio Details Section ======= -
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
+                  <img src="img/0.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/0.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/0.jpg" alt="" />
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Web design</li>
+                <li><strong>Client</strong>: ASU Company</li>
+                <li><strong>Project date</strong>: 01 March, 2020</li>
+                <li>
+                  <strong>Project URL</strong>:
+                  <a href="#">www.example.com</a>
+                </li>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2>This is an example of portfolio detail</h2>
+              <p>
+                Dana application is able to see various user reviews in the form
+                of feedback, criticism, and appreciation. Review analysis can be
+                easily seen through the number of stars given by users. Giving a
+                high number of stars can't always describe the content,
+                otherwise appears to be negative. Sentiment analysis can provide
+                deeper information about the evaluation from Dana's users.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <End Portfolio Details Section -->
+
+    <!-- End #main -->
+
+    <!-- ======= Footer ======================== 
+    <footer id="footer">
+      <div class="container">
+        <h3>Laura Thomson</h3>
+        <p>
+          Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni
+          eligendi fuga maxime saepe commodi placeat.
+        </p>
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+        <div class="copyright">
+          &copy; Copyright <strong><span>Laura</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits">
+          < All the links in the footer should remain intact. -->
+    <!-- You can delete the links only if you purchased the pro version. -->
+    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/ -->
+    <!--  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+    End Footer -->
+
+    <a href="#" class="btn btn-lg btn-light btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/typed.js/typed.umd.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
